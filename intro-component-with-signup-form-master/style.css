@@ -22,7 +22,7 @@ body {
     min-height: 100vh;
 }
 
-.container > div{
+.container>div {
     flex: 1;
     padding: 0 20px;
 }
@@ -66,6 +66,8 @@ p {
     bottom: -20px;
     right: 0;
     opacity: 0;
+    color: hsl(0, 100%, 74%);
+    font-weight: 600;
 }
 
 input {
@@ -79,9 +81,31 @@ input {
     border: 1.3px solid hsl(246, 25%, 77%);
 }
 
+.form-control.error input {
+    border-color: hsl(0, 100%, 74%);
+    color: hsl(0, 100%, 74%);
+}
+
+.form-control.error input::placeholder {
+    color: hsl(0, 100%, 74%);
+}
+
 input:focus {
     border: 1.3px solid hsl(248, 32%, 49%);
     outline: none;
+}
+
+.form-control img {
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 15px;
+    height: 20px;
+}
+
+.form-control.error img {
+    opacity: 1;
 }
 
 button {
@@ -116,6 +140,14 @@ small {
     font-size: 11px;
     margin-top: 15px;
     font-weight: 500;
+}
+
+.form-control small {
+    opacity: 0;
+}
+
+.form-control.error small {
+    opacity: 1;
 }
 
 small a {
